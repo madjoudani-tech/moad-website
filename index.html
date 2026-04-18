@@ -350,25 +350,25 @@
       <input type="hidden" name="bot-field" style="display:none" />
       <div class="f-row">
         <label class="f-label" for="fn">Your name</label>
-        <input class="f-input" id="fn" type="text" required autocomplete="off" />
+        <input class="f-input" id="fn" name="name" type="text" required autocomplete="off" />
       </div>
       <div class="f-row">
         <label class="f-label" for="fe">Email address</label>
-        <input class="f-input" id="fe" type="email" required autocomplete="off" />
+        <input class="f-input" id="fe" name="email" type="email" required autocomplete="off" />
       </div>
       <div class="f-row">
         <p class="f-label">I am interested in</p>
         <div class="chips">
-          <span class="chip" onclick="pick(this)">Brand Identity</span>
-          <span class="chip" onclick="pick(this)">The Style Edit</span>
-          <span class="chip" onclick="pick(this)">The Wardrobe Edit</span>
-          <span class="chip" onclick="pick(this)">The Style Session</span>
-          <span class="chip" onclick="pick(this)">The Bespoke</span>
+          <label class="chip"><input type="checkbox" name="interest" value="Brand Identity" style="display:none" />Brand Identity</label>
+          <label class="chip"><input type="checkbox" name="interest" value="The Style Edit" style="display:none" />The Style Edit</label>
+          <label class="chip"><input type="checkbox" name="interest" value="The Wardrobe Edit" style="display:none" />The Wardrobe Edit</label>
+          <label class="chip"><input type="checkbox" name="interest" value="The Style Session" style="display:none" />The Style Session</label>
+          <label class="chip"><input type="checkbox" name="interest" value="The Bespoke" style="display:none" />The Bespoke</label>
         </div>
       </div>
       <div class="f-row">
         <label class="f-label" for="fm">Tell us about your brand or project</label>
-        <textarea class="f-textarea" id="fm" required></textarea>
+        <textarea class="f-textarea" id="fm" name="message" required></textarea>
       </div>
       <button class="f-submit" id="fsub" type="submit">Send enquiry</button>
     </form>
@@ -392,6 +392,10 @@
   const nav = document.getElementById('nav');
   window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 40));
   function pick(el) { el.classList.toggle('on'); }
+  // Chip labels toggle on click
+  document.querySelectorAll('.chip input[type=checkbox]').forEach(cb => {
+    cb.addEventListener('change', () => cb.closest('.chip').classList.toggle('on', cb.checked));
+  });
 
   // Show success banner if redirected back after form submit
   if (window.location.search.includes('success=true')) {
@@ -405,7 +409,11 @@
       e.preventDefault();
       const svc = btn.dataset.service;
       document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
-      setTimeout(() => { document.querySelectorAll('.chip').forEach(c => { if (c.textContent === svc) c.classList.add('on'); }); }, 700);
+      setTimeout(() => {
+        document.querySelectorAll('.chip input[type=checkbox]').forEach(cb => {
+          if (cb.value === svc) { cb.checked = true; cb.closest('.chip').classList.add('on'); }
+        });
+      }, 700);
     });
   });
   // form submits natively to Netlify — no JS override needed
