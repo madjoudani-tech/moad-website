@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MOAD Agency — Image Direction</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Raleway:wght@200;300;400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --white:  #FFFFFF;
+      --pearl:  #FAF8F6;
+      --black:  #1A1814;
+      --mid:    #555555;
+      --light:  #999999;
+      --cherry: #4E1219;
+      --border: #E8E4E0;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--white);
+      color: var(--black);
+      font-family: 'Raleway', sans-serif;
+      font-weight: 300;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3 { font-family: 'Playfair Display', serif; font-weight: 400; line-height: 1.0; }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 28px 64px;
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid transparent;
+      transition: border-color .3s;
+    }
+    nav.scrolled { border-bottom-color: var(--border); }
+
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: .95rem; letter-spacing: .28em; text-transform: uppercase;
+      color: var(--black); text-decoration: none;
+    }
+    .logo span { font-style: italic; color: var(--cherry); }
+
+    .nav-links { display: flex; gap: 44px; list-style: none; }
+    .nav-links a {
+      font-weight: 300; font-size: .68rem; letter-spacing: .22em;
+      text-transform: uppercase; color: var(--black); text-decoration: none;
+      transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--cherry); }
+
+    /* HERO */
+    #home {
+      min-height: 100vh;
+      display: flex; flex-direction: column; justify-content: center;
+      padding: 120px 64px 88px;
+    }
+
+    .hero-eyebrow {
+      font-weight: 300; font-size: .65rem; letter-spacing: .38em;
+      text-transform: uppercase; color: var(--light); margin-bottom: 32px;
+    }
+
+    .hero-agency {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(5rem, 16vw, 17rem);
+      font-weight: 400; line-height: .92;
+      color: var(--cherry);
+      letter-spacing: -.01em;
+      margin-bottom: 56px;
+    }
+
+    .hero-row {
+      display: flex; align-items: flex-end;
+      justify-content: space-between; gap: 60px;
+    }
+
+    .hero-line {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.4rem, 2.8vw, 2.2rem);
+      color: var(--black); line-height: 1.25; max-width: 560px;
+    }
+    .hero-line em { font-style: italic; color: var(--cherry); }
+
+    .hero-right {
+      flex-shrink: 0;
+      display: flex; flex-direction: column; align-items: flex-end; gap: 28px;
+    }
+
+    .hero-sub {
+      font-weight: 300; font-size: .82rem; color: var(--mid);
+      line-height: 1.9; max-width: 300px; text-align: right;
+    }
+
+    /* LINKS */
+    .link-arrow {
+      font-weight: 300; font-size: .7rem; letter-spacing: .22em;
+      text-transform: uppercase; color: var(--black); text-decoration: none;
+      border-bottom: 1px solid var(--black); padding-bottom: 3px;
+      display: inline-block; transition: color .2s, border-color .2s;
+    }
+    .link-arrow:hover { color: var(--cherry); border-color: var(--cherry); }
+
+    /* DIVIDER */
+    .divider { height: 1px; background: var(--border); margin: 0 64px; }
+
+    /* TAG */
+    .tag {
+      font-weight: 300; font-size: .6rem; letter-spacing: .38em;
+      text-transform: uppercase; color: var(--cherry);
+      margin-bottom: 28px; display: block;
+    }
+
+    /* APPROACH */
+    #approach { padding: 120px 64px; }
+
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+
+    .approach-h2 { font-size: clamp(2.6rem, 5vw, 4.2rem); }
+    .approach-h2 em { color: var(--cherry); }
+
+    .approach-body { padding-top: 60px; }
+    .approach-body p {
+      font-weight: 300; font-size: .88rem; color: var(--mid);
+      line-height: 2; margin-bottom: 20px; max-width: 500px;
+    }
+
+    .pillars {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 2px; background: var(--border); margin-top: 96px;
+    }
+
+    .pillar { background: var(--white); padding: 72px 56px; }
+    .pillar.pearl { background: var(--pearl); }
+
+    .pillar-num {
+      font-weight: 300; font-size: .6rem; letter-spacing: .35em;
+      color: var(--light); margin-bottom: 36px; display: block;
+    }
+
+    .pillar h3 { font-size: clamp(2rem, 3.2vw, 2.7rem); margin-bottom: 24px; }
+    .pillar h3 em { color: var(--cherry); }
+    .pillar p { font-weight: 300; font-size: .84rem; color: var(--mid); line-height: 1.95; max-width: 400px; margin-bottom: 44px; }
+
+    /* PACKAGES */
+    #styling { padding: 120px 64px; scroll-margin-top: 80px; }
+
+    .pkg-head { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 72px; }
+    .pkg-head h2 { font-size: clamp(2.2rem, 4vw, 3.4rem); }
+    .pkg-head h2 em { color: var(--cherry); }
+    .pkg-note { font-weight: 300; font-size: .72rem; color: var(--light); text-align: right; line-height: 1.8; max-width: 200px; }
+
+    .pkg-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: var(--border); }
+
+    .pkg { background: var(--white); padding: 56px 44px; display: flex; flex-direction: column; }
+    .pkg.pearl { background: var(--pearl); }
+
+    .pkg-mode {
+      font-weight: 300; font-size: .58rem; letter-spacing: .36em;
+      text-transform: uppercase; color: var(--cherry); margin-bottom: 28px;
+    }
+
+    .pkg-name { font-family: 'Playfair Display', serif; font-size: 1.7rem; margin-bottom: 14px; color: var(--black); }
+
+    .pkg-price { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.15rem; color: var(--cherry); margin-bottom: 28px; }
+
+    .pkg-line { height: 1px; background: var(--border); margin-bottom: 28px; }
+
+    .pkg-desc { font-weight: 300; font-size: .82rem; color: var(--mid); line-height: 1.95; flex: 1; margin-bottom: 32px; }
+
+    .pkg-list { list-style: none; margin-bottom: 40px; }
+    .pkg-list li {
+      font-weight: 300; font-size: .74rem; color: var(--mid);
+      padding: 9px 0; border-bottom: 1px solid var(--border);
+      display: flex; align-items: flex-start; gap: 10px;
+    }
+    .pkg-list li::before { content: '·'; color: var(--cherry); flex-shrink: 0; font-size: 1.2rem; line-height: 1.2; }
+
+    .btn-border {
+      display: block; text-align: center;
+      font-weight: 300; font-size: .7rem; letter-spacing: .22em;
+      text-transform: uppercase; color: var(--black); text-decoration: none;
+      border: 1px solid var(--black); padding: 16px 24px;
+      transition: background .25s, color .25s;
+    }
+    .btn-border:hover { background: var(--black); color: var(--white); }
+
+    /* STATEMENT */
+    .statement {
+      padding: 100px 64px; text-align: center;
+      border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+    }
+    .statement p {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.5rem, 3.2vw, 2.6rem);
+      color: var(--black); line-height: 1.5; max-width: 860px; margin: 0 auto;
+    }
+    .statement p em { color: var(--cherry); }
+
+    /* BRAND */
+    #brand { padding: 120px 64px; background: var(--pearl); scroll-margin-top: 80px; }
+
+    .brand-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 120px; align-items: start; }
+
+    .brand-left h2 { font-size: clamp(2.2rem, 4vw, 3.4rem); margin-bottom: 36px; }
+    .brand-left h2 em { color: var(--cherry); }
+    .brand-left p { font-weight: 300; font-size: .86rem; color: var(--mid); line-height: 2; max-width: 480px; margin-bottom: 20px; }
+    .brand-left .link-arrow { margin-top: 36px; }
+
+    .detail-row { padding: 24px 0; border-bottom: 1px solid var(--border); }
+    .detail-row:first-child { border-top: 1px solid var(--border); }
+    .detail-label { font-weight: 300; font-size: .6rem; letter-spacing: .32em; text-transform: uppercase; color: var(--cherry); margin-bottom: 8px; }
+    .detail-value { font-weight: 300; font-size: .82rem; color: var(--mid); line-height: 1.75; }
+
+    /* ABOUT */
+    #about { padding: 120px 64px; scroll-margin-top: 80px; }
+
+    .about-grid { display: grid; grid-template-columns: 200px 1fr; gap: 120px; align-items: start; }
+
+    .about-aside-name { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--light); margin-top: 12px; }
+
+    .about-main h2 { font-size: clamp(2rem, 3.5vw, 2.9rem); margin-bottom: 40px; }
+    .about-main h2 em { color: var(--cherry); }
+    .about-main p { font-weight: 300; font-size: .88rem; color: var(--mid); line-height: 2; max-width: 640px; margin-bottom: 20px; }
+    .about-footer { margin-top: 44px; font-weight: 300; font-size: .62rem; letter-spacing: .3em; text-transform: uppercase; color: var(--light); }
+
+    /* INSTAGRAM */
+    .ig-wrap { padding: 80px 64px; border-top: 1px solid var(--border); }
+
+    .ig-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px; }
+    .ig-top h3 { font-size: 1.6rem; color: var(--black); }
+    .ig-top h3 em { color: var(--cherry); }
+    .ig-top a {
+      font-weight: 300; font-size: .7rem; letter-spacing: .2em;
+      text-transform: uppercase; color: var(--black); text-decoration: none;
+      border-bottom: 1px solid var(--border); padding-bottom: 2px;
+      transition: border-color .2s;
+    }
+    .ig-top a:hover { border-color: var(--black); }
+
+    /* Behold embed sits here — it fills this container */
+    .ig-embed-wrap { width: 100%; }
+
+    /* CONTACT */
+    #contact { padding: 120px 64px; scroll-margin-top: 80px; }
+
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 120px; }
+
+    .contact-left h2 { font-size: clamp(2rem, 3.8vw, 3rem); margin-bottom: 24px; }
+    .contact-left h2 em { color: var(--cherry); }
+    .contact-left .closing {
+      font-family: 'Playfair Display', serif; font-style: italic;
+      font-size: .96rem; color: var(--mid); line-height: 1.8;
+      max-width: 360px; margin-bottom: 44px;
+    }
+
+    .c-row { margin-bottom: 20px; }
+    .c-label { font-weight: 300; font-size: .6rem; letter-spacing: .32em; text-transform: uppercase; color: var(--cherry); margin-bottom: 4px; }
+    .c-row a { font-weight: 300; font-size: .84rem; color: var(--black); text-decoration: none; transition: color .2s; }
+    .c-row a:hover { color: var(--cherry); }
+
+    .form { display: flex; flex-direction: column; }
+
+    .f-row { display: flex; flex-direction: column; border-bottom: 1px solid var(--border); padding: 26px 0; }
+    .f-row:first-child { border-top: 1px solid var(--border); }
+
+    .f-label { font-weight: 300; font-size: .6rem; letter-spacing: .3em; text-transform: uppercase; color: var(--black); margin-bottom: 10px; }
+
+    .f-input, .f-textarea {
+      background: transparent; border: none; outline: none;
+      font-family: 'Raleway', sans-serif; font-weight: 300;
+      font-size: .92rem; color: var(--black); width: 100%; resize: none;
+    }
+    .f-textarea { min-height: 96px; }
+
+    .chips { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
+    .chip {
+      font-weight: 300; font-size: .65rem; letter-spacing: .14em;
+      text-transform: uppercase; color: var(--mid);
+      border: 1px solid var(--border); padding: 8px 16px;
+      cursor: pointer; user-select: none; transition: all .2s;
+    }
+    .chip.on, .chip:hover { color: var(--cherry); border-color: var(--cherry); }
+
+    .f-submit {
+      margin-top: 44px; align-self: flex-start;
+      font-family: 'Raleway', sans-serif; font-weight: 300;
+      font-size: .7rem; letter-spacing: .24em; text-transform: uppercase;
+      color: var(--white); background: var(--black);
+      border: 1px solid var(--black); padding: 18px 48px;
+      cursor: pointer; transition: background .25s, color .25s;
+    }
+    .f-submit:hover { background: transparent; color: var(--black); }
+    .f-submit:disabled { background: var(--cherry); border-color: var(--cherry); cursor: default; }
+
+    /* FOOTER */
+    footer {
+      background: var(--white); border-top: 1px solid var(--border);
+      padding: 44px 64px;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+
+    .f-logo { font-family: 'Playfair Display', serif; font-size: .95rem; letter-spacing: .22em; text-transform: uppercase; color: var(--black); }
+    .f-logo span { font-style: italic; color: var(--cherry); }
+
+    .f-nav { display: flex; gap: 32px; }
+    .f-nav a { font-weight: 300; font-size: .64rem; letter-spacing: .2em; text-transform: uppercase; color: var(--black); text-decoration: none; transition: color .2s; }
+    .f-nav a:hover { color: var(--cherry); }
+
+    .f-copy { font-weight: 300; font-size: .62rem; letter-spacing: .12em; color: var(--light); }
+
+    /* MOBILE */
+    @media (max-width: 800px) {
+      nav { padding: 20px 24px; }
+      .nav-links { gap: 20px; }
+
+      #home { padding: 100px 24px 64px; }
+      .hero-row { flex-direction: column; align-items: flex-start; gap: 32px; }
+      .hero-right { align-items: flex-start; }
+      .hero-sub { text-align: left; }
+
+      .divider { margin: 0 24px; }
+
+      #approach, #styling, #brand, #about, #contact { padding: 80px 24px; }
+      .ig-wrap { padding: 64px 24px; }
+      .statement { padding: 72px 24px; }
+
+      .two-col, .brand-grid, .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 48px; }
+      .about-grid { grid-template-columns: 1fr; }
+      .approach-body { padding-top: 0; }
+
+      .pillars, .pkg-grid { grid-template-columns: 1fr; }
+
+      .pkg-head { flex-direction: column; align-items: flex-start; gap: 16px; }
+      .pkg-note { text-align: left; }
+
+      footer { flex-direction: column; gap: 24px; text-align: center; padding: 40px 24px; }
+      .f-nav { flex-wrap: wrap; justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#home" class="logo">MOAD <span>agency</span></a>
+  <ul class="nav-links">
+    <li><a href="#styling">Styling</a></li>
+    <li><a href="#brand">Brand Identity</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="home">
+  <p class="hero-eyebrow">Boutique agency · Image direction</p>
+  <h1 class="hero-agency">MOAD<br>AGENCY</h1>
+  <div class="hero-row">
+    <h2 class="hero-line">
+      Image direction. For brands<br>
+      and the people <em>behind</em> them.
+    </h2>
+    <div class="hero-right">
+      <p class="hero-sub">A boutique studio specialising in brand identity and personal styling. The same eye, applied to two things.</p>
+      <a href="#approach" class="link-arrow">Discover what we do</a>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- APPROACH -->
+<section id="approach">
+  <div class="two-col">
+    <div>
+      <span class="tag">The MOAD approach</span>
+      <h2 class="approach-h2">The same eye.<br>Applied to two<br><em>things.</em></h2>
+    </div>
+    <div class="approach-body">
+      <p>The eye that reads a brand and knows what is wrong is the same eye that looks at a wardrobe and knows what is missing. It is not a coincidence. It is the point.</p>
+      <p>MOAD works with individuals and brands who understand that how you present yourself is not vanity. It is communication.</p>
+    </div>
+  </div>
+
+  <div class="pillars">
+    <div class="pillar">
+      <span class="pillar-num">01</span>
+      <h3>Personal<br><em>Styling</em></h3>
+      <p>Wardrobe direction, styling edits, and in-person sessions — available remotely or wherever you are. For the person who wants to look exactly as good as they know they can.</p>
+      <a href="#styling" class="link-arrow">View packages</a>
+    </div>
+    <div class="pillar pearl">
+      <span class="pillar-num">02</span>
+      <h3>Brand Identity<br>& <em>Direction</em></h3>
+      <p>Positioning, visual identity, tone of voice, and image direction. For founders and brands who need to be impossible to ignore.</p>
+      <a href="#brand" class="link-arrow">Learn more</a>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- STYLING PACKAGES -->
+<section id="styling">
+  <div class="pkg-head">
+    <div>
+      <span class="tag">Personal Styling</span>
+      <h2>Three ways to<br>work <em>together.</em></h2>
+    </div>
+    <p class="pkg-note">Remote or in person.<br>Tailored to you.</p>
+  </div>
+
+  <div class="pkg-grid">
+
+    <div class="pkg">
+      <p class="pkg-mode">Remote</p>
+      <h3 class="pkg-name">The Style Edit</h3>
+      <p class="pkg-price">From €175</p>
+      <div class="pkg-line"></div>
+      <p class="pkg-desc">Tell me what you need. A trip wardrobe, the perfect bag, a capsule for a new season. I source everything, pull it together as a complete edit, and deliver every piece linked and shoppable.</p>
+      <ul class="pkg-list">
+        <li>Brief questionnaire to understand your needs</li>
+        <li>Complete sourced edit — outfits, pieces, or individual finds</li>
+        <li>Everything linked via ShopMy</li>
+        <li>Delivered as a PDF style guide</li>
+      </ul>
+      <a href="#contact" class="btn-border" data-service="The Style Edit">Book this</a>
+    </div>
+
+    <div class="pkg pearl">
+      <p class="pkg-mode">Remote or in person</p>
+      <h3 class="pkg-name">The Wardrobe Edit</h3>
+      <p class="pkg-price">From €350</p>
+      <div class="pkg-line"></div>
+      <p class="pkg-desc">The full reboot. We go through everything you own, toss and keep, then fill only the gaps. You get a complete wardrobe plan and a sourced edit of exactly what is missing.</p>
+      <ul class="pkg-list">
+        <li>Full wardrobe audit</li>
+        <li>Toss, keep, and gap analysis</li>
+        <li>Sourced additions linked via ShopMy</li>
+        <li>In person available from €650</li>
+      </ul>
+      <a href="#contact" class="btn-border" data-service="The Wardrobe Edit">Book this</a>
+    </div>
+
+    <div class="pkg">
+      <p class="pkg-mode">In person · Available globally</p>
+      <h3 class="pkg-name">The Style Session</h3>
+      <p class="pkg-price">From €750</p>
+      <div class="pkg-line"></div>
+      <p class="pkg-desc">One morning, in your wardrobe, together. Decisions made in real time. You leave with a clear direction and a sourced edit of exactly what you need next. Available wherever you are.</p>
+      <ul class="pkg-list">
+        <li>Half-day in-person session at your location</li>
+        <li>Live wardrobe decisions together</li>
+        <li>Post-session sourced edit</li>
+        <li>Limited availability — enquire to book</li>
+      </ul>
+      <a href="#contact" class="btn-border" data-service="The Style Session">Enquire</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- STATEMENT -->
+<div class="statement">
+  <p>Visibility without clarity does not convert.<br>Aesthetic without direction does not <em>last.</em></p>
+</div>
+
+<!-- BRAND IDENTITY -->
+<section id="brand">
+  <div class="brand-grid">
+    <div class="brand-left">
+      <span class="tag">Brand Identity & Direction</span>
+      <h2>Before anything<br>is visible — there<br>is <em>identity.</em></h2>
+      <p>MOAD works with founders, CEOs, and personal brands who are building or repositioning. We define how you are seen, understood, and remembered.</p>
+      <p>Delivered as a project over four to six weeks. Every engagement begins with a conversation.</p>
+      <a href="#contact" class="link-arrow">Enquire</a>
+    </div>
+    <div>
+      <div class="detail-row">
+        <p class="detail-label">What is included</p>
+        <p class="detail-value">Brand positioning and clarity. Visual identity and direction. Tone of voice and narrative. Image and styling direction. The foundation for everything visible.</p>
+      </div>
+      <div class="detail-row">
+        <p class="detail-label">Who it is for</p>
+        <p class="detail-value">Founders and CEOs building or repositioning. Personal brands where the individual is the brand. Fashion and lifestyle businesses ready to be taken seriously.</p>
+      </div>
+      <div class="detail-row">
+        <p class="detail-label">Timeline</p>
+        <p class="detail-value">Four to six weeks. Project-based. Signed agreement and 50% deposit to begin.</p>
+      </div>
+      <div class="detail-row">
+        <p class="detail-label">Pricing</p>
+        <p class="detail-value">By enquiry. Every project is scoped individually. We do not discount — we reduce scope.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-grid">
+    <div>
+      <span class="tag">About</span>
+      <p class="about-aside-name">MOAD Agency</p>
+    </div>
+    <div class="about-main">
+      <h2>Where image<br>becomes <em>identity.</em></h2>
+      <p>MOAD is a boutique studio specialising in brand identity and personal styling — built at the intersection of strategy, aesthetics, and perception.</p>
+      <p>We work with individuals and brands who understand that how you look and how you are perceived are the same conversation. The eye that reads a brand and knows what is wrong is the same eye that sees a wardrobe and knows what is missing.</p>
+      <p class="about-footer">Based in Europe · Working globally</p>
+    </div>
+  </div>
+</section>
+
+<!-- INSTAGRAM -->
+<div class="ig-wrap">
+  <div class="ig-top">
+    <h3>The MOAD <em>Eye</em></h3>
+    <a href="https://www.instagram.com/moadagency/" target="_blank" rel="noopener">@moadagency ↗</a>
+  </div>
+
+  <div class="ig-embed-wrap">
+    <behold-widget feed-id="qg25K35QqHYm1bOs63b9"></behold-widget>
+    <script>
+      (() => {
+        const d=document,s=d.createElement("script");s.type="module";
+        s.src="https://w.behold.so/widget.js";d.head.append(s);
+      })();
+    </script>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-grid">
+    <div class="contact-left">
+      <span class="tag">Get in touch</span>
+      <h2>Let's talk about<br>your <em>vision.</em></h2>
+      <p class="closing">"We work with a select number of clients at any time. If the fit is right, we will know quickly."</p>
+      <div class="c-row">
+        <p class="c-label">Email</p>
+        <a href="mailto:hello@themoadagency.com">hello@themoadagency.com</a>
+      </div>
+      <div class="c-row" style="margin-top:16px">
+        <p class="c-label">Instagram</p>
+        <a href="https://instagram.com/moadagency" target="_blank" rel="noopener">@moadagency</a>
+      </div>
+    </div>
+
+    <form class="form" onsubmit="send(event)">
+      <div class="f-row">
+        <label class="f-label" for="fn">Your name</label>
+        <input class="f-input" id="fn" type="text" required autocomplete="off" />
+      </div>
+      <div class="f-row">
+        <label class="f-label" for="fe">Email address</label>
+        <input class="f-input" id="fe" type="email" required autocomplete="off" />
+      </div>
+      <div class="f-row">
+        <p class="f-label">I am interested in</p>
+        <div class="chips">
+          <span class="chip" onclick="pick(this)">The Style Edit</span>
+          <span class="chip" onclick="pick(this)">The Wardrobe Edit</span>
+          <span class="chip" onclick="pick(this)">The Style Session</span>
+          <span class="chip" onclick="pick(this)">Brand Identity</span>
+        </div>
+      </div>
+      <div class="f-row">
+        <label class="f-label" for="fm">Tell us about your brand or project</label>
+        <textarea class="f-textarea" id="fm" required></textarea>
+      </div>
+      <button class="f-submit" id="fsub" type="submit">Send enquiry</button>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="f-logo">MOAD <span>agency</span></div>
+  <nav class="f-nav">
+    <a href="#styling">Styling</a>
+    <a href="#brand">Brand Identity</a>
+    <a href="#about">About</a>
+    <a href="https://www.instagram.com/moadagency/" target="_blank" rel="noopener">Instagram</a>
+  </nav>
+  <p class="f-copy">© 2026 MOAD Agency</p>
+</footer>
+
+<script>
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 40));
+
+  function pick(el) { el.classList.toggle('on'); }
+
+  document.querySelectorAll('.btn-border[data-service]').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.preventDefault();
+      const svc = btn.dataset.service;
+      document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+      setTimeout(() => {
+        document.querySelectorAll('.chip').forEach(c => { if (c.textContent === svc) c.classList.add('on'); });
+      }, 700);
+    });
+  });
+
+  function send(e) {
+    e.preventDefault();
+    const btn = document.getElementById('fsub');
+    btn.textContent = 'Message sent.';
+    btn.disabled = true;
+  }
+</script>
+
+</body>
+</html>
