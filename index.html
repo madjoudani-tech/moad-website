@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Raleway:wght@200;300;400&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root { --white:#FFFFFF; --pearl:#FAF8F6; --black:#1A1814; --mid:#555555; --light:#999999; --cherry:#4E1219; --border:#E8E4E0; }
+    :root { --white:#FDFCFB; --pearl:#FCFAF8; --black:#1A1814; --mid:#555555; --light:#999999; --cherry:#4E1219; --border:#E8E4E0; }
     html { scroll-behavior: smooth; }
     body { background:var(--white); color:var(--black); font-family:'Raleway',sans-serif; font-weight:300; line-height:1.6; -webkit-font-smoothing:antialiased; }
     h1,h2,h3 { font-family:'Playfair Display',serif; font-weight:400; line-height:1.0; }
@@ -89,9 +89,9 @@
     .ig-top a { font-weight:300; font-size:.7rem; letter-spacing:.2em; text-transform:uppercase; color:var(--black); text-decoration:none; border-bottom:1px solid var(--border); padding-bottom:2px; transition:border-color .2s; }
     .ig-top a:hover { border-color:var(--black); }
     .ig-embed-wrap { width:100%; }
-    #contact { padding:120px 64px; scroll-margin-top:80px; }
+    #contact { padding:120px 64px; scroll-margin-top:80px; border-top:1px solid var(--border); }
     .contact-grid { display:grid; grid-template-columns:1fr 1fr; gap:120px; }
-    .contact-left h2 { font-size:clamp(2rem,3.8vw,3rem); margin-bottom:24px; }
+    .contact-left h2 { font-size:clamp(2.4rem,4.5vw,3.8rem); margin-bottom:24px; }
     .contact-left h2 em { color:var(--cherry); }
     .contact-left .closing { font-family:'Playfair Display',serif; font-style:italic; font-size:.96rem; color:var(--mid); line-height:1.8; max-width:360px; margin-bottom:44px; }
     .c-row { margin-bottom:20px; }
@@ -110,7 +110,7 @@
     .f-submit { margin-top:44px; align-self:flex-start; font-family:'Raleway',sans-serif; font-weight:300; font-size:.7rem; letter-spacing:.24em; text-transform:uppercase; color:var(--white); background:var(--black); border:1px solid var(--black); padding:18px 48px; cursor:pointer; transition:background .25s,color .25s; }
     .f-submit:hover { background:transparent; color:var(--black); }
     .f-submit:disabled { background:var(--cherry); border-color:var(--cherry); cursor:default; }
-    .success-banner { display:none; position:fixed; bottom:40px; left:50%; transform:translateX(-50%); background:var(--black); color:var(--white); font-family:'Raleway',sans-serif; font-weight:300; font-size:.72rem; letter-spacing:.18em; text-transform:uppercase; padding:20px 48px; z-index:999; }
+    .success-banner { display:none; position:fixed; bottom:40px; left:50%; transform:translateX(-50%); background:var(--black); color:var(--white); font-family:'Raleway',sans-serif; font-weight:300; font-size:.72rem; letter-spacing:.18em; text-transform:uppercase; padding:20px 48px; z-index:999; box-shadow:0 4px 32px rgba(0,0,0,.15); }
     .success-banner.show { display:block; }
     footer { background:var(--white); border-top:1px solid var(--border); padding:44px 64px; display:flex; justify-content:space-between; align-items:center; }
     .f-logo { font-family:'Playfair Display',serif; font-size:.95rem; letter-spacing:.22em; text-transform:uppercase; color:var(--black); }
@@ -132,7 +132,7 @@
       .pillars,.pkg-grid { grid-template-columns:1fr; }
       .pkg-head { flex-direction:column; align-items:flex-start; gap:16px; }
       .pkg-note { text-align:left; }
-      .success-banner { display:none; position:fixed; bottom:40px; left:50%; transform:translateX(-50%); background:var(--black); color:var(--white); font-family:'Raleway',sans-serif; font-weight:300; font-size:.72rem; letter-spacing:.18em; text-transform:uppercase; padding:20px 48px; z-index:999; }
+      .success-banner { display:none; position:fixed; bottom:40px; left:50%; transform:translateX(-50%); background:var(--black); color:var(--white); font-family:'Raleway',sans-serif; font-weight:300; font-size:.72rem; letter-spacing:.18em; text-transform:uppercase; padding:20px 48px; z-index:999; box-shadow:0 4px 32px rgba(0,0,0,.15); }
     .success-banner.show { display:block; }
     footer { flex-direction:column; gap:24px; text-align:center; padding:40px 24px; }
       .f-nav { flex-wrap:wrap; justify-content:center; }
@@ -279,7 +279,7 @@
         <li>Post-session sourced edit</li>
         <li>Limited availability, enquire to book</li>
       </ul>
-      <a href="#contact" class="btn-border" data-service="The Style Session">Enquire</a>
+      <a href="#contact" class="btn-border" data-service="The Style Session">Book this</a>
     </div>
 
     <div class="pkg pearl">
@@ -346,7 +346,7 @@
       </div>
     </div>
     <form class="form" name="contact" method="POST" action="https://formspree.io/f/xqewbbly">
-      <input type="hidden" name="_next" value="https://themoadagency.com/?sent=true" />
+      <input type="hidden" name="_next" value="https://madjoudani-tech.github.io/moad-website/?sent=true" />
       <input type="hidden" name="_subject" value="New enquiry from MOAD Agency website" />
 
       <div class="f-row">
@@ -368,7 +368,7 @@
         </div>
       </div>
       <div class="f-row">
-        <label class="f-label" for="fm">Tell us about your brand or project</label>
+        <label class="f-label" for="fm">Tell us what you are looking for</label>
         <textarea class="f-textarea" id="fm" name="message" required></textarea>
       </div>
       <button class="f-submit" id="fsub" type="submit">Send enquiry</button>
@@ -387,7 +387,7 @@
   <p class="f-copy">© 2026 MOAD Agency</p>
 </footer>
 
-<div class="success-banner" id="successBanner">Message sent. We will be in touch.</div>
+<div class="success-banner" id="successBanner">Thank you. We will be in touch shortly.</div>
 
 <script>
   const nav = document.getElementById('nav');
