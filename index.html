@@ -137,7 +137,10 @@
       .two-col,.brand-grid,.about-grid,.contact-grid { grid-template-columns:1fr; gap:48px; }
       .approach-body { padding-top:0; }
       .pillars { grid-template-columns:1fr; }
-      .pkg-grid { grid-template-columns:repeat(2,1fr); }
+      .pkg-grid { display:flex; overflow-x:scroll; scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch; gap:0; background:transparent; scrollbar-width:none; }
+      .pkg-grid::-webkit-scrollbar { display:none; }
+      .pkg-grid .pkg { flex-shrink:0; width:calc(100vw - 48px); scroll-snap-align:start; border-right:1px solid var(--border); }
+      .pkg-grid .pkg:last-child { border-right:none; }
       .pkg-bespoke { flex-direction:column; align-items:flex-start; gap:24px; padding:36px 24px; }
       .pkg-bespoke-desc { max-width:100%; }
       .pkg-head { flex-direction:column; align-items:flex-start; gap:16px; }
