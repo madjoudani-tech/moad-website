@@ -420,7 +420,7 @@ footer{padding:44px 0;border-top:1px solid var(--line);}
   <div class="wrap">
     <div class="section-head">
       <h2>Personal <em class="accent">styling.</em></h2>
-      <p>Five ways to work together. Remote or in person. Every package starts with a conversation. Book a free intro call and we'll find the right fit.</p>
+      <p>Five ways to work together. Remote or in person. Request a package directly, or book a free intro call if you'd like to talk it through first.</p>
     </div>
 
     <div class="cards">
@@ -441,7 +441,7 @@ footer{padding:44px 0;border-top:1px solid var(--line);}
             <li>Delivered as a PDF style guide</li>
           </ul>
         </details>
-        <a href="#" class="btn btn-solid js-book">Book this</a>
+        <a href="#contact" class="btn btn-solid js-enquire" data-interest="The Style Edit">Request this</a>
       </div>
 
       <!-- Wardrobe Edit -->
@@ -479,7 +479,7 @@ footer{padding:44px 0;border-top:1px solid var(--line);}
             <li>Limited availability</li>
           </ul>
         </details>
-        <a href="#" class="btn btn-solid js-book">Book this</a>
+        <a href="#contact" class="btn btn-solid js-enquire" data-interest="The Style Session">Request this</a>
       </div>
 
       <!-- Occasion Edit -->
@@ -498,7 +498,7 @@ footer{padding:44px 0;border-top:1px solid var(--line);}
             <li>Milestone birthdays, galas, and significant events</li>
           </ul>
         </details>
-        <a href="#" class="btn btn-solid js-book">Enquire</a>
+        <a href="#contact" class="btn btn-solid js-enquire" data-interest="The Occasion Edit">Enquire</a>
       </div>
 
       <!-- Bespoke -->
@@ -511,7 +511,7 @@ footer{padding:44px 0;border-top:1px solid var(--line);}
           </div>
           <div style="display:flex;flex-direction:column;">
             <p class="desc">For the client who wants something entirely their own: ongoing styling direction, a complete image overhaul, or something in between. Scoped around you.</p>
-            <a href="#" class="btn btn-ghost js-book" style="width:max-content;">Enquire</a>
+            <a href="#contact" class="btn btn-ghost js-enquire" data-interest="The Bespoke" style="width:max-content;">Enquire</a>
           </div>
         </div>
       </div>
@@ -535,7 +535,7 @@ footer{padding:44px 0;border-top:1px solid var(--line);}
       </ul>
       <div class="hero-ctas">
         <a href="#" class="btn btn-solid js-book">Book a free intro call</a>
-        <a href="#contact" class="btn btn-ghost">Send an enquiry</a>
+        <a href="#contact" class="btn btn-ghost js-enquire" data-interest="Brand Identity &amp; Direction">Send an enquiry</a>
       </div>
     </div>
   </div>
@@ -593,14 +593,14 @@ footer{padding:44px 0;border-top:1px solid var(--line);}
         <h3>Book a free <em class="accent">intro call.</em></h3>
         <p>Twenty minutes, no obligation. We talk through what you need and confirm the right package. You'll see live availability and pick a time that suits you.</p>
         <a href="#" class="btn btn-solid js-book">See availability &amp; book</a>
-        <p class="small">Prefer email? <a href="mailto:hello@themoadagency.com">hello@themoadagency.com</a></p>
+        <p class="small">Prefer email? <a href="mailto:mogeh@themoadagency.com">mogeh@themoadagency.com</a></p>
       </div>
 
       <!-- Form -->
       <div class="contact-cell">
         <span class="eyebrow">Not sure yet?</span>
         <h3>Send an <em class="accent">enquiry.</em></h3>
-        <form id="enquiryForm" action="https://formsubmit.co/hello@themoadagency.com" method="POST">
+        <form id="enquiryForm" action="https://formsubmit.co/mogeh@themoadagency.com" method="POST">
           <input type="hidden" name="_subject" value="New enquiry from themoadagency.com">
           <input type="hidden" name="_captcha" value="false">
           <div class="field">
@@ -672,6 +672,18 @@ document.querySelectorAll(".js-book").forEach(el=>{
   });
 });
 
+/* 1b) Enquiry CTAs: scroll to contact form and pre-select the service of interest */
+document.querySelectorAll(".js-enquire").forEach(el=>{
+  el.addEventListener("click",e=>{
+    e.preventDefault();
+    const interest = el.dataset.interest;
+    const select = document.getElementById("f-interest");
+    if (interest && select) select.value = interest;
+    document.getElementById("contact").scrollIntoView({behavior:"smooth"});
+    setTimeout(()=>document.getElementById("f-name")?.focus(), 500);
+  });
+});
+
 /* 2) Mobile menu */
 function toggleMenu(){
   document.getElementById("mobileMenu").classList.toggle("open");
@@ -685,7 +697,7 @@ document.getElementById("enquiryForm").addEventListener("submit",async e=>{
   const btn = form.querySelector('button[type="submit"]');
   btn.textContent = "Sending…";
   try{
-    const res = await fetch("https://formsubmit.co/ajax/hello@themoadagency.com",{
+    const res = await fetch("https://formsubmit.co/ajax/mogeh@themoadagency.com",{
       method:"POST",
       headers:{ "Content-Type":"application/json", "Accept":"application/json" },
       body: JSON.stringify(Object.fromEntries(new FormData(form)))
@@ -695,7 +707,7 @@ document.getElementById("enquiryForm").addEventListener("submit",async e=>{
     document.getElementById("formOk").style.display="block";
   }catch(err){
     btn.textContent = "Send enquiry";
-    window.location.href = "mailto:hello@themoadagency.com?subject=Enquiry from MOAD Agency website";
+    window.location.href = "mailto:mogeh@themoadagency.com?subject=Enquiry from MOAD Agency website";
   }
 });
 </script>
