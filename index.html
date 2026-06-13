@@ -6,6 +6,17 @@
 <title>MOAD Agency · Personal Styling & Brand Identity</title>
 <meta name="description" content="MOAD is a boutique agency for personal styling and brand identity. Remote or in person, worldwide. Book a free intro call.">
 
+<!-- Open Graph / Social previews -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="MOAD Agency · Personal Styling & Brand Identity">
+<meta property="og:description" content="Boutique agency for personal styling and brand identity. Remote or in person, worldwide.">
+<meta property="og:image" content="https://themoadagency.com/og-image.jpg">
+<meta property="og:url" content="https://themoadagency.com/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="MOAD Agency · Personal Styling & Brand Identity">
+<meta name="twitter:description" content="Boutique agency for personal styling and brand identity. Remote or in person, worldwide.">
+<meta name="twitter:image" content="https://themoadagency.com/og-image.jpg">
+
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -293,15 +304,6 @@ footer{padding:44px 0;border-top:1px solid var(--line);}
 .foot a:hover{opacity:.6;}
 .foot .copy{font-size:13px;color:var(--ink-soft);}
 
-/* ---------- Mobile book bar ---------- */
-.bookbar{
-  display:none;position:fixed;left:0;right:0;bottom:0;z-index:90;
-  padding:10px 16px calc(10px + env(safe-area-inset-bottom));
-  background:rgba(255,255,255,.94);backdrop-filter:blur(12px);
-  border-top:1px solid var(--line);
-}
-.bookbar .btn{width:100%;}
-
 /* ============================================================
    MOBILE
    ============================================================ */
@@ -321,9 +323,6 @@ footer{padding:44px 0;border-top:1px solid var(--line);}
   #about .about-grid{grid-template-columns:1fr;gap:36px;}
   .contact-grid{grid-template-columns:1fr;}
   .contact-cell{padding:40px 28px;}
-
-  .bookbar{display:block;}
-  body{padding-bottom:74px;}
 }
 </style>
 </head>
@@ -649,11 +648,6 @@ footer{padding:44px 0;border-top:1px solid var(--line);}
     <span class="copy">© 2026 MOAD Agency</span>
   </div>
 </footer>
-
-<!-- Mobile sticky book bar -->
-<div class="bookbar">
-  <a href="#" class="btn btn-solid js-book">Book a free intro call</a>
-</div>
 
 <script>
 /* ============================================================
