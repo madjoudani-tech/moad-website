@@ -125,6 +125,11 @@ header{
 .dropdown hr{border:none;border-top:1px solid var(--line);margin:8px 0;}
 
 .nav-cta{margin-left:8px;}
+/* .nav-links a sets padding:8px 0 on all nav links, which has higher
+   specificity than .btn and was squashing the Book a call button to
+   8px/32px tall instead of the standard 16px 30px / 48px tall used by
+   every other button on the site. This restores the standard size. */
+.nav-links a.btn{padding:16px 30px;}
 
 /* Hamburger */
 .burger{display:none;background:none;border:none;cursor:pointer;padding:8px;z-index:210;}
@@ -136,7 +141,7 @@ header{
   padding:90px 32px 40px;overflow-y:auto;
 }
 .mobile-menu.open{display:block;}
-.mobile-menu a{
+.mobile-menu a:not(.btn){
   display:block;
   font-family:var(--serif);font-size:27px;font-style:italic;font-weight:500;
   text-decoration:none;padding:15px 0;border-bottom:1px solid var(--line);
