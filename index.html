@@ -600,7 +600,7 @@ footer{padding:44px 0;border-top:1px solid var(--line);}
       <div class="contact-cell">
         <span class="eyebrow">Not sure yet?</span>
         <h3>Send an <em class="accent">enquiry.</em></h3>
-        <form id="enquiryForm" action="https://formsubmit.co/hello@themoadagency.com" method="POST">
+        <form id="enquiryForm" action="https://formsubmit.co/mogeh@themoadagency.com" method="POST">
           <input type="hidden" name="_subject" value="New enquiry from themoadagency.com">
           <input type="hidden" name="_captcha" value="false">
           <div class="field">
@@ -697,7 +697,7 @@ document.getElementById("enquiryForm").addEventListener("submit",async e=>{
   const btn = form.querySelector('button[type="submit"]');
   btn.textContent = "Sending…";
   try{
-    const res = await fetch("https://formsubmit.co/ajax/hello@themoadagency.com",{
+    const res = await fetch("https://formsubmit.co/ajax/mogeh@themoadagency.com",{
       method:"POST",
       headers:{ "Content-Type":"application/json", "Accept":"application/json" },
       body: JSON.stringify(Object.fromEntries(new FormData(form)))
