@@ -593,14 +593,14 @@ footer{padding:44px 0;border-top:1px solid var(--line);}
         <h3>Book a free <em class="accent">intro call.</em></h3>
         <p>Twenty minutes, no obligation. We talk through what you need and confirm the right package. You'll see live availability and pick a time that suits you.</p>
         <a href="#" class="btn btn-solid js-book">See availability &amp; book</a>
-        <p class="small">Prefer email? <a href="mailto:mogeh@themoadagency.com">mogeh@themoadagency.com</a></p>
+        <p class="small">Prefer email? <a href="mailto:hello@themoadagency.com">hello@themoadagency.com</a></p>
       </div>
 
       <!-- Form -->
       <div class="contact-cell">
         <span class="eyebrow">Not sure yet?</span>
         <h3>Send an <em class="accent">enquiry.</em></h3>
-        <form id="enquiryForm" action="https://formsubmit.co/mogeh@themoadagency.com" method="POST">
+        <form id="enquiryForm" action="https://formsubmit.co/hello@themoadagency.com" method="POST">
           <input type="hidden" name="_subject" value="New enquiry from themoadagency.com">
           <input type="hidden" name="_captcha" value="false">
           <div class="field">
@@ -697,7 +697,7 @@ document.getElementById("enquiryForm").addEventListener("submit",async e=>{
   const btn = form.querySelector('button[type="submit"]');
   btn.textContent = "Sending…";
   try{
-    const res = await fetch("https://formsubmit.co/ajax/mogeh@themoadagency.com",{
+    const res = await fetch("https://formsubmit.co/ajax/hello@themoadagency.com",{
       method:"POST",
       headers:{ "Content-Type":"application/json", "Accept":"application/json" },
       body: JSON.stringify(Object.fromEntries(new FormData(form)))
@@ -707,7 +707,7 @@ document.getElementById("enquiryForm").addEventListener("submit",async e=>{
     document.getElementById("formOk").style.display="block";
   }catch(err){
     btn.textContent = "Send enquiry";
-    window.location.href = "mailto:mogeh@themoadagency.com?subject=Enquiry from MOAD Agency website";
+    window.location.href = "mailto:hello@themoadagency.com?subject=Enquiry from MOAD Agency website";
   }
 });
 </script>
