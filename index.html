@@ -3,17 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MOAD Agency · Personal Styling & Brand Identity</title>
-<meta name="description" content="MOAD is a boutique agency for personal styling and brand identity. Remote or in person, worldwide. Book a free intro call.">
+<title>MOAD Agency · Personal Styling and Brand Identity</title>
+<meta name="description" content="MOAD is a boutique agency for personal styling and brand identity. Remote or in person, worldwide. Book a call.">
 
 <!-- Open Graph / Social previews -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="MOAD Agency · Personal Styling & Brand Identity">
+<meta property="og:title" content="MOAD Agency · Personal Styling and Brand Identity">
 <meta property="og:description" content="Boutique agency for personal styling and brand identity. Remote or in person, worldwide.">
 <meta property="og:image" content="https://themoadagency.com/og-image.jpg">
 <meta property="og:url" content="https://themoadagency.com/">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="MOAD Agency · Personal Styling & Brand Identity">
+<meta name="twitter:title" content="MOAD Agency · Personal Styling and Brand Identity">
 <meta name="twitter:description" content="Boutique agency for personal styling and brand identity. Remote or in person, worldwide.">
 <meta name="twitter:image" content="https://themoadagency.com/og-image.jpg">
 
@@ -216,8 +216,19 @@ section{padding:88px 0;}
 .pillar a:hover{opacity:.6;}
 .pillar .eyebrow{color:var(--ink-soft);}
 
+/* ---------- Start here (under the two doors) ---------- */
+.start-here{text-align:center;max-width:660px;margin:52px auto 0;}
+.start-here p{color:var(--ink-soft);font-size:16px;margin-bottom:26px;}
+.start-here .hero-ctas{justify-content:center;}
+.link-underline{
+  display:inline-block;margin-top:20px;
+  font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;
+  text-decoration:none;border-bottom:1px solid var(--ink);padding-bottom:3px;
+}
+.link-underline:hover{opacity:.6;}
+
 /* ---------- Services ---------- */
-#styling{background:var(--bg-alt);}
+#foryou{background:var(--bg-alt);}
 .cards{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
 .card{
   background:var(--white);border:1px solid var(--line);
@@ -246,22 +257,26 @@ details li{margin-bottom:7px;}
 .card-wide{grid-column:1 / -1;}
 .card-wide .card-inner{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;}
 
+/* Note under the styling services */
+.styling-note{text-align:center;color:var(--ink-soft);font-size:14px;max-width:640px;margin:40px auto 0;line-height:1.7;}
+
 /* ---------- Brand identity band ---------- */
-#brand .brand-grid{display:block;max-width:720px;margin:0 auto;}
-#brand h2{font-size:clamp(34px,4.4vw,54px);margin:18px 0 18px;}
-#brand p.lead{font-size:17px;color:var(--ink-soft);max-width:480px;margin-bottom:8px;}
-#brand .facts{list-style:none;margin:26px 0 30px;border-top:1px solid var(--line);}
-#brand .facts li{
+#forbrand .brand-grid{display:block;max-width:720px;margin:0 auto;}
+#forbrand h2{font-size:clamp(34px,4.4vw,54px);margin:18px 0 18px;}
+#forbrand p.lead{font-size:17px;color:var(--ink-soft);max-width:520px;margin-bottom:20px;}
+#forbrand .facts{list-style:none;margin:26px 0 30px;border-top:1px solid var(--line);}
+#forbrand .facts li{
   display:flex;justify-content:space-between;gap:24px;
   padding:13px 0;border-bottom:1px solid var(--line);font-size:15px;
 }
-#brand .facts li span:first-child{font-weight:600;font-size:13px;letter-spacing:.1em;text-transform:uppercase;padding-top:2px;white-space:nowrap;}
-#brand .facts li span:last-child{color:var(--ink-soft);text-align:right;max-width:380px;}
-#brand .hero-ctas{margin-top:4px;}
+#forbrand .facts li span:first-child{font-weight:600;font-size:13px;letter-spacing:.1em;text-transform:uppercase;padding-top:2px;white-space:nowrap;}
+#forbrand .facts li span:last-child{color:var(--ink-soft);text-align:right;max-width:380px;}
+#forbrand .hero-ctas{margin-top:4px;}
 
 /* ---------- Quote strip ---------- */
 .quote{background:transparent;color:var(--ink);padding:64px 0;text-align:center;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
 .quote p{font-family:var(--serif);font-style:italic;font-size:clamp(24px,3.2vw,38px);line-height:1.3;max-width:760px;margin:0 auto;}
+.quote .attrib{font-family:var(--sans);font-style:normal;font-size:14px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);margin-top:24px;}
 
 /* ---------- About ---------- */
 #about .about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center;}
@@ -334,25 +349,9 @@ footer{padding:44px 0;border-top:1px solid var(--line);}
     <a class="logo" href="#home">MOAD <span style="font-style:italic;">agency</span></a>
 
     <ul class="nav-links">
-      <li class="has-dropdown">
-        <button class="dropdown-toggle" aria-haspopup="true">
-          Services
-          <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.4"/></svg>
-        </button>
-        <div class="dropdown">
-          <div class="dd-label">Personal styling</div>
-          <a href="#styling">The Style Edit</a>
-          <a href="#styling">The Wardrobe Edit</a>
-          <a href="#styling">The Style Session</a>
-          <a href="#styling">The Occasion Edit</a>
-          <a href="#styling">The Bespoke</a>
-          <hr>
-          <div class="dd-label">For brands</div>
-          <a href="#brand">Brand Identity &amp; Direction</a>
-        </div>
-      </li>
+      <li><a href="#foryou">For You</a></li>
+      <li><a href="#forbrand">For Your Brand</a></li>
       <li><a href="#about">About</a></li>
-      <li><a href="#contact">Contact</a></li>
       <li class="nav-cta"><a href="#" class="btn btn-solid js-book">Book a call</a></li>
     </ul>
 
@@ -364,177 +363,153 @@ footer{padding:44px 0;border-top:1px solid var(--line);}
 
 <!-- Mobile menu -->
 <div class="mobile-menu" id="mobileMenu">
-  <div class="dd-label">Personal styling</div>
-  <a href="#styling" onclick="toggleMenu()">The Style Edit</a>
-  <a href="#styling" onclick="toggleMenu()">The Wardrobe Edit</a>
-  <a href="#styling" onclick="toggleMenu()">The Style Session</a>
-  <a href="#styling" onclick="toggleMenu()">The Occasion Edit</a>
-  <a href="#styling" onclick="toggleMenu()">The Bespoke</a>
-  <div class="dd-label">For brands</div>
-  <a href="#brand" onclick="toggleMenu()">Brand Identity &amp; Direction</a>
-  <div class="dd-label">Agency</div>
+  <a href="#foryou" onclick="toggleMenu()">For You</a>
+  <a href="#forbrand" onclick="toggleMenu()">For Your Brand</a>
   <a href="#about" onclick="toggleMenu()">About</a>
-  <a href="#contact" onclick="toggleMenu()">Contact</a>
-  <a href="#" class="btn btn-solid js-book" onclick="toggleMenu()">Book a free intro call</a>
+  <a href="#" class="btn btn-solid js-book" onclick="toggleMenu()">Book a call</a>
 </div>
 
 <!-- ================= HERO ================= -->
 <section class="hero" id="home">
   <div class="wrap hero-grid">
     <div>
-      <span class="eyebrow">Boutique agency · Europe → worldwide</span>
-      <h1>Personal styling &amp; brand <em class="accent">identity.</em></h1>
-      <p class="lead">We dress people and direct brands. The same eye, applied to two things. Remote or in person, wherever you are.</p>
-      <div class="hero-ctas">
-        <a href="#" class="btn btn-solid js-book">Book a free intro call</a>
-        <a href="#styling" class="btn btn-ghost">Services &amp; prices</a>
-      </div>
-      <p class="hero-meta">Personal styling · Brand identity &amp; direction · <a href="https://www.instagram.com/moadagency/" style="font-weight:600;">@moadagency</a></p>
+      <span class="eyebrow">Boutique agency · worldwide</span>
+      <h1>Personal styling and brand <em class="accent">identity.</em></h1>
+      <p class="lead">I dress people and direct brands, the same eye applied to both. Remote or in person, worldwide.</p>
+      <p class="hero-meta">Personal styling · Brand identity · <a href="https://www.instagram.com/moadagency/" style="font-weight:600;">@moadagency</a></p>
     </div>
   </div>
 </section>
 
-<!-- ================= TWO PILLARS ================= -->
+<!-- ================= TWO DOORS ================= -->
 <section class="pillars" id="approach" style="padding-top:0;">
   <div class="wrap">
     <div class="pillar-grid">
       <div class="pillar">
-        <span class="eyebrow">01 · For people</span>
-        <h3>Personal <em class="accent">Styling</em></h3>
-        <p>Wardrobe direction, sourced edits, and in-person sessions. For the person who wants to look exactly as good as they know they can.</p>
-        <a href="#styling">View packages</a>
+        <span class="eyebrow">01 · For you</span>
+        <h3>For <em class="accent">You</em></h3>
+        <p>Personal styling, from a single remote consultation to having me on call all year.</p>
+        <a href="#foryou">See For You</a>
       </div>
       <div class="pillar">
-        <span class="eyebrow">02 · For brands</span>
-        <h3>Brand Identity &amp; <em class="accent">Direction</em></h3>
-        <p>Positioning, visual identity, tone of voice, and image direction. For founders and brands who need to be impossible to ignore.</p>
-        <a href="#brand">Learn more</a>
+        <span class="eyebrow">02 · For your brand</span>
+        <h3>For Your <em class="accent">Brand</em></h3>
+        <p>Identity, direction, and image for founders and brands.</p>
+        <a href="#forbrand">See For Your Brand</a>
       </div>
+    </div>
+
+    <!-- Start here -->
+    <div class="start-here">
+      <p>New here? Start with The Consultation. Thirty five euros, remote, and credited toward whatever you book next. The easiest way to find out what you need.</p>
+      <div class="hero-ctas">
+        <a href="#" class="btn btn-solid js-buy" data-product="consultation" data-interest="The Consultation">Book The Consultation</a>
+      </div>
+      <a href="#foryou" class="link-underline">See all services</a>
     </div>
   </div>
 </section>
 
-<!-- ================= STYLING SERVICES ================= -->
-<section id="styling">
+<!-- ================= FOR YOU ================= -->
+<section id="foryou">
   <div class="wrap">
     <div class="section-head">
-      <h2>Personal <em class="accent">styling.</em></h2>
-      <p>Five ways to work together. Remote or in person. Request a package directly, or book a free intro call if you'd like to talk it through first.</p>
+      <h2>For <em class="accent">You.</em></h2>
+      <p>Six ways to work with me, from a quick remote consultation to a full year on call. Not sure which? Start with The Consultation and we will find it together.</p>
     </div>
 
     <div class="cards">
 
-      <!-- Style Edit -->
+      <!-- The Consultation -->
       <div class="card">
         <div class="card-top">
-          <div><span class="tag">Remote</span><h3>The Style Edit</h3></div>
-          <span class="price">€150</span>
+          <div><span class="tag">Remote</span><h3>The Consultation</h3></div>
+          <span class="price">€35</span>
         </div>
-        <p class="desc">Tell me what you need: a trip wardrobe, the perfect bag, a capsule for a new season. I source everything and deliver it as a complete, shoppable edit.</p>
-        <details>
-          <summary>What's included</summary>
-          <ul>
-            <li>Brief questionnaire to understand your needs</li>
-            <li>Complete sourced edit: outfits, pieces, or individual finds</li>
-            <li>Everything linked and shoppable via ShopMy</li>
-            <li>Delivered as a PDF style guide</li>
-          </ul>
-        </details>
-        <a href="#contact" class="btn btn-solid js-enquire" data-interest="The Style Edit">Request this</a>
+        <p class="desc">A one to one video call to talk through your style, your goals, and what is missing. You leave with clear direction and a sense of which service fits you best. Fully credited toward whatever you book next.</p>
+        <a href="#" class="btn btn-solid js-buy" data-product="consultation" data-interest="The Consultation">Add to cart</a>
       </div>
 
-      <!-- Wardrobe Edit -->
+      <!-- The Find -->
+      <div class="card">
+        <div class="card-top">
+          <div><span class="tag">Remote</span><h3>The Find</h3></div>
+          <span class="price">€150</span>
+        </div>
+        <p class="desc">There is one thing you need and cannot find. The perfect coat, the bag that pulls a whole look together, the dress for one important night. Tell me what it is, and I search until I find it, then send you a short edit of the best options, each one linked and ready to buy.</p>
+        <a href="#" class="btn btn-solid js-buy" data-product="find" data-interest="The Find">Add to cart</a>
+      </div>
+
+      <!-- The Style Guide -->
+      <div class="card">
+        <div class="card-top">
+          <div><span class="tag">Remote</span><h3>The Style Guide</h3></div>
+          <span class="price">€250</span>
+        </div>
+        <p class="desc">Your personal style, defined. I get to know you and build a guide to the colours, shapes, and pieces that are truly right for you, and exactly how to wear them together. Delivered as a considered PDF you keep and return to.</p>
+        <a href="#" class="btn btn-solid js-buy" data-product="styleguide" data-interest="The Style Guide">Add to cart</a>
+      </div>
+
+      <!-- The Wardrobe Edit -->
       <div class="card">
         <div class="card-top">
           <div><span class="tag">Remote or in person</span><h3>The Wardrobe Edit</h3></div>
-          <span class="price">€350</span>
+          <span class="price">From €600</span>
         </div>
-        <p class="desc">Your wardrobe is already full. We make it work: going through everything you own, editing ruthlessly, and finding what's actually missing.</p>
-        <details>
-          <summary>What's included</summary>
-          <ul>
-            <li>Full wardrobe audit</li>
-            <li>Toss, keep, and rediscover decisions</li>
-            <li>Gap analysis and sourced additions</li>
-            <li>Walk away with a wardrobe that actually works</li>
-          </ul>
-        </details>
-        <a href="#" class="btn btn-solid js-book">Book this</a>
+        <p class="desc">We go through everything you already own and decide what stays, what goes, and what is missing, so your wardrobe finally works as one. The in person edit is several hours of hands on work in your home, so the price is set by the size of your wardrobe and confirmed at your Consultation.</p>
+        <a href="#contact" class="btn btn-solid js-enquire" data-interest="The Wardrobe Edit">Enquire</a>
       </div>
 
-      <!-- Style Session -->
+      <!-- Personal Shopping -->
       <div class="card">
         <div class="card-top">
-          <div><span class="tag">In person · Available globally</span><h3>The Style Session</h3></div>
-          <span class="price">€675</span>
+          <div><span class="tag">Remote or in person</span><h3>Personal Shopping</h3></div>
+          <span class="price">From €450</span>
         </div>
-        <p class="desc">Not about your wardrobe, but about who you are becoming. A half-day building your style language from the ground up.</p>
-        <details>
-          <summary>What's included</summary>
-          <ul>
-            <li>Half-day in-person session at your location</li>
-            <li>Style direction and identity work</li>
-            <li>Shopping strategy and curated new edit</li>
-            <li>Limited availability</li>
-          </ul>
-        </details>
-        <a href="#contact" class="btn btn-solid js-enquire" data-interest="The Style Session">Request this</a>
+        <p class="desc">Once we know your direction, I source a full edit of new pieces chosen only for you and present them ready to buy. Priced by the scope of the edit and confirmed before we begin.</p>
+        <a href="#contact" class="btn btn-solid js-enquire" data-interest="Personal Shopping">Enquire</a>
       </div>
 
-      <!-- Occasion Edit -->
+      <!-- The Private Client -->
       <div class="card">
         <div class="card-top">
-          <div><span class="tag">In person or remote</span><h3>The Occasion Edit</h3></div>
-          <span class="price"><em>By enquiry</em></span>
+          <div><span class="tag">By application</span><h3>The Private Client</h3></div>
         </div>
-        <p class="desc">Weddings, galas, milestone birthdays. Every significant moment dressed with intention, for one person or the whole group.</p>
-        <details>
-          <summary>What's included</summary>
-          <ul>
-            <li>The bride: rehearsal dinner, bachelorette to honeymoon morning</li>
-            <li>Bridesmaids and mother of the bride</li>
-            <li>Guests who want to look right without overdoing it</li>
-            <li>Milestone birthdays, galas, and significant events</li>
-          </ul>
-        </details>
-        <a href="#contact" class="btn btn-solid js-enquire" data-interest="The Occasion Edit">Enquire</a>
+        <p class="desc">For the person who no longer wants to think about any of it. I become your stylist for the year, handling every season, every event, and every purchase. A handful of clients at a time.</p>
+        <a href="#contact" class="btn btn-solid js-enquire" data-interest="The Private Client">Apply</a>
       </div>
 
-      <!-- Bespoke -->
+      <!-- Priority Access (add on) -->
       <div class="card card-wide">
         <div class="card-inner">
           <div>
-            <span class="tag">Fully tailored</span>
-            <h3>The Bespoke</h3>
-            <span class="price" style="font-size:20px;"><em>By enquiry</em></span>
+            <span class="tag">Add on</span>
+            <h3>Priority Access</h3>
+            <span class="price" style="font-size:20px;">€50 at checkout</span>
           </div>
           <div style="display:flex;flex-direction:column;">
-            <p class="desc">For the client who wants something entirely their own: ongoing styling direction, a complete image overhaul, or something in between. Scoped around you.</p>
-            <a href="#contact" class="btn btn-ghost js-enquire" data-interest="The Bespoke" style="width:max-content;">Enquire</a>
+            <p class="desc">Booked and want to be seen first? Add Priority Access and your edit moves to the front of my week.</p>
+            <a href="#" class="btn btn-ghost js-buy" data-product="priority" data-interest="Priority Access" style="width:max-content;">Add it</a>
           </div>
         </div>
       </div>
 
     </div>
+
+    <p class="styling-note">A note on all styling services. These are my styling fees. The cost of any clothing is separate and always yours to keep.</p>
   </div>
 </section>
 
-<!-- ================= BRAND IDENTITY ================= -->
-<section id="brand">
+<!-- ================= FOR YOUR BRAND ================= -->
+<section id="forbrand">
   <div class="wrap brand-grid">
     <div>
-      <span class="eyebrow">For founders &amp; brands</span>
-      <h2>Brand Identity &amp; <em class="accent">Direction.</em></h2>
-      <p class="lead">Before anything is visible, there is identity. We define how you are seen, understood, and remembered.</p>
-      <ul class="facts">
-        <li><span>Included</span><span>Positioning · visual identity · tone of voice · image direction</span></li>
-        <li><span>For</span><span>Founders, CEOs, and personal brands building or repositioning</span></li>
-        <li><span>Timeline</span><span>Four to six weeks, project-based</span></li>
-        <li><span>Pricing</span><span>By enquiry. We do not discount, we reduce scope.</span></li>
-      </ul>
+      <span class="eyebrow">For founders and brands</span>
+      <h2>Brand Identity and <em class="accent">Direction.</em></h2>
+      <p class="lead">Before anything is visible, there is identity. I define how you are seen, understood, and remembered. Positioning, visual identity, tone of voice, and image direction, for founders and brands who need to be impossible to ignore.</p>
+      <p class="lead">Four to six weeks, project based. I do not discount, I reduce scope.</p>
       <div class="hero-ctas">
-        <a href="#" class="btn btn-solid js-book">Book a free intro call</a>
-        <a href="#contact" class="btn btn-ghost js-enquire" data-interest="Brand Identity &amp; Direction">Send an enquiry</a>
+        <a href="#contact" class="btn btn-solid js-enquire" data-interest="Brand Identity and Direction">Enquire about your brand</a>
       </div>
     </div>
   </div>
@@ -544,6 +519,7 @@ footer{padding:44px 0;border-top:1px solid var(--line);}
 <section class="quote">
   <div class="wrap">
     <p>"Visibility without clarity does not convert. Aesthetic without direction does not last."</p>
+    <p class="attrib">Mogeh, founder of MOAD</p>
   </div>
 </section>
 
@@ -556,8 +532,8 @@ footer{padding:44px 0;border-top:1px solid var(--line);}
     <div>
       <span class="eyebrow">About MOAD</span>
       <h2>Where image becomes <em class="accent">identity.</em></h2>
-      <p>MOAD is a boutique agency built at the intersection of strategy, aesthetics, and perception. The eye that reads a brand and knows what is wrong is the same eye that sees a wardrobe and knows what is missing.</p>
-      <p>We work with a select number of clients at any time. Based in Europe, working globally.</p>
+      <p>MOAD is a boutique agency built where strategy, aesthetics, and perception meet. The eye that reads a brand and knows what is wrong is the same eye that sees a wardrobe and knows what is missing.</p>
+      <p>I work with a small number of clients at any time. Based between Madrid and Stockholm, working worldwide.</p>
       <a class="ig" href="https://www.instagram.com/moadagency/">@moadagency ↗</a>
     </div>
   </div>
@@ -580,25 +556,25 @@ footer{padding:44px 0;border-top:1px solid var(--line);}
 <section id="contact">
   <div class="wrap">
     <div class="section-head">
-      <h2>Start <em class="accent">here.</em></h2>
-      <p>Two ways in. If you know what you want, book directly. If you're not sure yet, write to us and we'll point you right.</p>
+      <h2>Enquire or <em class="accent">apply.</em></h2>
+      <p>If you know what you want, book a call. If you would like to talk it through first, or apply for The Private Client, write to me here.</p>
     </div>
 
     <div class="contact-grid">
 
       <!-- Book -->
       <div class="contact-cell">
-        <span class="eyebrow">Know what you want?</span>
-        <h3>Book a free <em class="accent">intro call.</em></h3>
-        <p>Twenty minutes, no obligation. We talk through what you need and confirm the right package. You'll see live availability and pick a time that suits you.</p>
-        <a href="#" class="btn btn-solid js-book">See availability &amp; book</a>
+        <span class="eyebrow">Rather talk first?</span>
+        <h3>Book a <em class="accent">call.</em></h3>
+        <p>A short call, no obligation. We talk through what you need and find the right service together. You will see live availability and pick a time that suits you.</p>
+        <a href="#" class="btn btn-solid js-book">See availability and book</a>
         <p class="small">Prefer email? <a href="mailto:hello@themoadagency.com">hello@themoadagency.com</a></p>
       </div>
 
       <!-- Form -->
       <div class="contact-cell">
-        <span class="eyebrow">Not sure yet?</span>
-        <h3>Send an <em class="accent">enquiry.</em></h3>
+        <span class="eyebrow">Send a message</span>
+        <h3>Enquire or <em class="accent">apply.</em></h3>
         <form id="enquiryForm" action="https://formsubmit.co/mogeh@themoadagency.com" method="POST">
           <input type="hidden" name="_subject" value="New enquiry from themoadagency.com">
           <input type="hidden" name="_captcha" value="false">
@@ -613,21 +589,23 @@ footer{padding:44px 0;border-top:1px solid var(--line);}
           <div class="field">
             <label for="f-interest">I am interested in</label>
             <select id="f-interest" name="interest">
-              <option>The Style Edit</option>
+              <option>The Consultation</option>
+              <option>The Find</option>
+              <option>The Style Guide</option>
               <option>The Wardrobe Edit</option>
-              <option>The Style Session</option>
-              <option>The Occasion Edit</option>
-              <option>The Bespoke</option>
-              <option>Brand Identity &amp; Direction</option>
+              <option>Personal Shopping</option>
+              <option>The Private Client</option>
+              <option>Priority Access</option>
+              <option>Brand Identity and Direction</option>
               <option>Not sure yet</option>
             </select>
           </div>
           <div class="field">
-            <label for="f-msg">Tell us what you are looking for</label>
+            <label for="f-msg">Tell me what you are looking for</label>
             <textarea id="f-msg" name="message"></textarea>
           </div>
-          <button type="submit" class="btn btn-solid" style="width:100%;">Send enquiry</button>
-          <div class="form-ok" id="formOk">Thank you. We will be in touch shortly.</div>
+          <button type="submit" class="btn btn-solid" style="width:100%;">Send message</button>
+          <div class="form-ok" id="formOk">Thank you. I will be in touch shortly.</div>
         </form>
       </div>
 
@@ -640,8 +618,8 @@ footer{padding:44px 0;border-top:1px solid var(--line);}
   <div class="wrap foot">
     <a class="logo" href="#home" style="font-size:19px;">MOAD <span style="font-style:italic;">agency</span></a>
     <nav>
-      <a href="#styling">Styling</a>
-      <a href="#brand">Brand Identity</a>
+      <a href="#foryou">For You</a>
+      <a href="#forbrand">For Your Brand</a>
       <a href="#about">About</a>
       <a href="https://www.instagram.com/moadagency/">Instagram</a>
     </nav>
@@ -655,6 +633,19 @@ footer{padding:44px 0;border-top:1px solid var(--line);}
    ============================================================ */
 const CALENDLY_URL = "https://calendly.com/madjoudani/30min";
 
+/* ============================================================
+   1b) PAYMENT LINKS for the instant-buy services.
+       Paste your checkout links here (Stripe Payment Link,
+       Gumroad, Payhip, etc). Until a link is filled in, the
+       button opens the enquiry form instead so nothing breaks.
+   ============================================================ */
+const PAYMENT_LINKS = {
+  consultation: "",   // The Consultation  €35
+  find:         "",   // The Find          €150
+  styleguide:   "",   // The Style Guide   €250
+  priority:     ""    // Priority Access   €50
+};
+
 document.querySelectorAll(".js-book").forEach(el=>{
   el.addEventListener("click",e=>{
     e.preventDefault();
@@ -666,7 +657,26 @@ document.querySelectorAll(".js-book").forEach(el=>{
   });
 });
 
-/* 1b) Enquiry CTAs: scroll to contact form and pre-select the service of interest */
+/* 1c) Buy CTAs: open the payment link if configured, otherwise
+       fall back to the enquiry form with the service pre-selected. */
+document.querySelectorAll(".js-buy").forEach(el=>{
+  el.addEventListener("click",e=>{
+    e.preventDefault();
+    const product = el.dataset.product;
+    const link = PAYMENT_LINKS[product];
+    if (link){
+      window.open(link,"_blank");
+      return;
+    }
+    const interest = el.dataset.interest;
+    const select = document.getElementById("f-interest");
+    if (interest && select) select.value = interest;
+    document.getElementById("contact").scrollIntoView({behavior:"smooth"});
+    setTimeout(()=>document.getElementById("f-name")?.focus(), 500);
+  });
+});
+
+/* 1d) Enquiry CTAs: scroll to contact form and pre-select the service of interest */
 document.querySelectorAll(".js-enquire").forEach(el=>{
   el.addEventListener("click",e=>{
     e.preventDefault();
@@ -700,7 +710,7 @@ document.getElementById("enquiryForm").addEventListener("submit",async e=>{
     form.querySelectorAll(".field, button").forEach(n=>n.style.display="none");
     document.getElementById("formOk").style.display="block";
   }catch(err){
-    btn.textContent = "Send enquiry";
+    btn.textContent = "Send message";
     window.location.href = "mailto:hello@themoadagency.com?subject=Enquiry from MOAD Agency website";
   }
 });
