@@ -479,33 +479,6 @@ footer{padding:44px 0;border-top:1px solid var(--line);}
         <a href="#contact" class="btn btn-solid js-enquire" data-interest="The Private Client">Apply</a>
       </div>
 
-            <!-- Priority Access (add on) -->
-      <div class="card card-wide">
-        <div class="card-inner">
-          <div>
-            <span class="tag">Add on</span>
-            <h3>Priority Access</h3>
-            <span class="price" style="font-size:20px;">€50 at checkout</span>
-          </div>
-          <div style="display:flex;flex-direction:column;">
-            <p class="desc">Booked and want to be seen first? Add Priority Access and your edit moves to the front of my week.</p>
-            <a href="#" class="btn btn-ghost js-buy" data-product="priority" data-interest="Priority Access" style="width:max-content;">Add it</a>
-          </div>
-        </div>
-      <div class="card card-wide">
-        <div class="card-inner">
-          <div>
-            <span class="tag">Add on</span>
-            <h3>Priority Access</h3>
-            <span class="price" style="font-size:20px;">€50 at checkout</span>
-          </div>
-          <div style="display:flex;flex-direction:column;">
-            <p class="desc">Booked and want to be seen first? Add Priority Access and your edit moves to the front of my week.</p>
-            <a href="#" class="btn btn-ghost js-buy" data-product="priority" data-interest="Priority Access" style="width:max-content;">Add it</a>
-          </div>
-        </div>
-      </div>
-
     </div>
 
     <p class="styling-note">A note on all styling services. These are my styling fees. The cost of any clothing is separate and always yours to keep.</p>
@@ -607,7 +580,6 @@ footer{padding:44px 0;border-top:1px solid var(--line);}
               <option>The Wardrobe Edit</option>
               <option>Personal Shopping</option>
               <option>The Private Client</option>
-              <option>Priority Access</option>
               <option>Brand Identity and Direction</option>
               <option>Not sure yet</option>
             </select>
@@ -647,15 +619,11 @@ const CALENDLY_URL = "https://calendly.com/madjoudani/30min";
 
 /* ============================================================
    1b) PAYMENT LINKS for the instant-buy services.
-       Paste your checkout links here (Stripe Payment Link,
-       Gumroad, Payhip, etc). Until a link is filled in, the
-       button opens the enquiry form instead so nothing breaks.
    ============================================================ */
 const PAYMENT_LINKS = {
   consultation: "https://buy.stripe.com/4gM4gz89r8q08Tt9gwgA800",
   find:         "https://buy.stripe.com/aFa4gzexPgWw3z9gIYgA801",
-  styleguide:   "https://buy.stripe.com/00w4gzexP5dO4Dd78ogA802",
-  priority:     "https://buy.stripe.com/bJebJ175n0Xyc5F64kgA803"
+  styleguide:   "https://buy.stripe.com/00w4gzexP5dO4Dd78ogA802"
 };
 
 document.querySelectorAll(".js-book").forEach(el=>{
@@ -669,8 +637,8 @@ document.querySelectorAll(".js-book").forEach(el=>{
   });
 });
 
-/* 1c) Buy CTAs: open the payment link if configured, otherwise
-       fall back to the enquiry form with the service pre-selected. */
+/* Buy CTAs: open the payment link if configured, otherwise
+   fall back to the enquiry form with the service pre-selected. */
 document.querySelectorAll(".js-buy").forEach(el=>{
   el.addEventListener("click",e=>{
     e.preventDefault();
@@ -688,7 +656,7 @@ document.querySelectorAll(".js-buy").forEach(el=>{
   });
 });
 
-/* 1d) Enquiry CTAs: scroll to contact form and pre-select the service of interest */
+/* Enquiry CTAs: scroll to contact form and pre-select the service of interest */
 document.querySelectorAll(".js-enquire").forEach(el=>{
   el.addEventListener("click",e=>{
     e.preventDefault();
@@ -700,13 +668,13 @@ document.querySelectorAll(".js-enquire").forEach(el=>{
   });
 });
 
-/* 2) Mobile menu */
+/* Mobile menu */
 function toggleMenu(){
   document.getElementById("mobileMenu").classList.toggle("open");
   document.body.classList.toggle("menu-open");
 }
 
-/* 3) Enquiry form (AJAX so the page never reloads) */
+/* Enquiry form (AJAX so the page never reloads) */
 document.getElementById("enquiryForm").addEventListener("submit",async e=>{
   e.preventDefault();
   const form = e.target;
